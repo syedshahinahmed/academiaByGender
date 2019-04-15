@@ -5,8 +5,19 @@ queue()
 function makeGraphs(error, salaryData) {
     var ndx = crossfilter(salaryData);
 
+    show_discipline_selector(ndx);
     show_gender_balance(ndx);
+
     dc.renderAll();
+}
+
+function show_discipline_selector(ndx) {
+    dim = ndx.dimension(dc.pluck("discipline"));
+    group = dim.group();
+
+    dc.selectMenu("#discipline-selector")
+        .dimension(dim)
+        .group(group);
 }
 
 function show_gender_balance(ndx) {
