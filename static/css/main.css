@@ -1,0 +1,11 @@
+html,
+body {
+    background-color: #fff;
+    color: black;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
